@@ -60,5 +60,21 @@
 <p>입출력 예 #1,2<br>
 문제의 예시와 같습니다.</p>
 
+### 문제 물이 설명
+
+### trouble shooting
+1. 처음에는 문제를 접근 할 때 answer도 arr.length 크기의 배열로 만들어서 진행하려고 했었다. 그 후에 <br>
+   for(int i = 0; i < arr.length; i++){ <br>
+            if(answer[i] != arr[i]){ <br>
+                answer[i] = arr[i]; <br>
+            } 
+   } <br>
+   위와 같이 코드를 짜서 수행하려고 했다. <br>
+   처음에 int는 0값으로 초기화 되기 때문에 answer의 모든 값은 0값이 되고 arr[i]와 비교했을 때 arr[i]값이 0이 아니라면 모두 달라서 모든 값이 다 들어가게 된다.
+2. answer 배열을 동적으로 크기가 변하는 배열로 만들고자 ArrayList를 사용하였는데 ArrayList<integer> answer = new ArrayList<>(); 와 같이 <> 안에 integer를 모두 소문자로 넣었다. <br>
+   -> 문법 실수로 인해 에러가 떴었다.
+3. ArrayList로 만든 객체를 반환할 때 배열로 바꾸지 않고 그냥 반환하려고 했더니 에러가 떴었다 <br>
+   - 배열로 만든 후에 return했어야 하는데 그러지 않았다. <br>
+   - 만약 배열로 만들지 않고 ArrayList 형식으로 return하려면 함수의 return 방식(ArrayList<Integer>)을 수정해야 했다. <br>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
